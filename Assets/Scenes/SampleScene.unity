@@ -166,7 +166,6 @@ GameObject:
   - component: {fileID: 208233709}
   - component: {fileID: 208233708}
   - component: {fileID: 208233707}
-  - component: {fileID: 208233706}
   - component: {fileID: 208233711}
   - component: {fileID: 208233710}
   m_Layer: 0
@@ -176,32 +175,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &208233706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208233705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb443925a09ff642937d8b84cd4ead2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 3737199403917662694, guid: f521f4093852b9f42b3627b56cbb2016,
-    type: 3}
-  spherePrefab: {fileID: 321449168724204976, guid: 1afdfc9df1f285549894f8a9205f2635,
-    type: 3}
-  capsulePrefab: {fileID: 7917778243191902605, guid: fafcc4cc70257d14ba2ede6594b0a521,
-    type: 3}
-  forwardOffset: 2
-  slider: {fileID: 890792317}
-  optionsPanel: {fileID: 1213197779}
-  sliderValueText: {fileID: 1876225013}
-  pointCloudToggle: {fileID: 1133228706}
-  cubeButton: {fileID: 1430793755}
-  sphereButton: {fileID: 1034806200}
-  capsuleButton: {fileID: 1614066101}
 --- !u!114 &208233707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +661,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208233706}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnchorPlacer, Assembly-CSharp
         m_MethodName: OnDestroyButtonPressed
         m_Mode: 1
@@ -1312,10 +1285,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 988276032}
   m_HandleRect: {fileID: 446404943}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1707,7 +1680,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208233706}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnchorPlacer, Assembly-CSharp
         m_MethodName: OnTogglePointCloud
         m_Mode: 6
@@ -1720,6 +1693,66 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
+--- !u!1 &1185338804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185338806}
+  - component: {fileID: 1185338805}
+  m_Layer: 0
+  m_Name: AnchorPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1185338805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185338804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb443925a09ff642937d8b84cd4ead2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 3737199403917662694, guid: f521f4093852b9f42b3627b56cbb2016, type: 3}
+  - {fileID: 321449168724204976, guid: 1afdfc9df1f285549894f8a9205f2635, type: 3}
+  - {fileID: 7917778243191902605, guid: fafcc4cc70257d14ba2ede6594b0a521, type: 3}
+  placementDistance: 2
+  distanceControlSlider: {fileID: 890792317}
+  pointCloudDisplay: {fileID: 8228525514263069404, guid: 1f47ee47a718c944e9839c6d6996d410,
+    type: 3}
+  pointCloudVisibilityToggle: {fileID: 1133228706}
+  removeAllAnchorsButton: {fileID: 704857684}
+  selectPrefabButtons:
+  - {fileID: 1430793755}
+  - {fileID: 1034806200}
+  - {fileID: 1614066101}
+  panel: {fileID: 1213197779}
+  slidertext: {fileID: 1876225013}
+--- !u!4 &1185338806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185338804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 418.85614, y: 232.52153, z: 877.4316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213197779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,13 +2990,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208233706}
+      - m_Target: {fileID: 1185338805}
         m_TargetAssemblyTypeName: AnchorPlacer, Assembly-CSharp
-        m_MethodName: OnOptionsButtonPressed
-        m_Mode: 1
+        m_MethodName: activateSettings
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1213197779}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3017,3 +3050,4 @@ SceneRoots:
   - {fileID: 1586203872}
   - {fileID: 1888949653}
   - {fileID: 1238329197}
+  - {fileID: 1185338806}
